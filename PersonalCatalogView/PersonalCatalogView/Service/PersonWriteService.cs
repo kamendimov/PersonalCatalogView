@@ -6,7 +6,7 @@ namespace PersonalCatalogView.Service
 {
     public class PersonWriteService : IPersonWriteService
     {
-        public void SavePerson(Person person)
+        public void SavePerson(PersonPersistentObject person)
         {
             DatabaseProvider databaseProvider = DatabaseProvider.GetDatabaseProvider();
             String Sql = @"insert into PERSONAL_INFO (FirstName, SurName, Dob, Address, PhoneNumber, IBAN) values 
@@ -36,7 +36,7 @@ namespace PersonalCatalogView.Service
             person.Id = (long)LastIdCommand.ExecuteScalar();
         }
 
-        public void UpdatePerson(Person person)
+        public void UpdatePerson(PersonPersistentObject person)
         {
             DatabaseProvider databaseProvider = DatabaseProvider.GetDatabaseProvider();
             String Sql = @"update PERSONAL_INFO set FirstName = @FirstName, SurName = @SurName, Dob = @Dob, 

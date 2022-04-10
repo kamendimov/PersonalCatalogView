@@ -18,12 +18,29 @@ namespace PersonalCatalogView.Service
 
         public void SavePerson(Person person)
         {
-            personWriteService.SavePerson(person);
+            PersonPersistentObject personPersistentObject = new PersonPersistentObject();
+            personPersistentObject.FirstName = person.FirstName;
+            personPersistentObject.SurName = person.SurName;
+            personPersistentObject.Dob = person.Dob;
+            personPersistentObject.Address = person.Address;
+            personPersistentObject.PhoneNumber = person.PhoneNumber;
+            personPersistentObject.IBAN = person.IBAN;
+
+            personWriteService.SavePerson(personPersistentObject);
         }
 
         public void UpdatePerson(Person person)
         {
-            personWriteService.UpdatePerson(person);
+            PersonPersistentObject personPersistentObject = new PersonPersistentObject();
+            personPersistentObject.Id = person.Id;
+            personPersistentObject.FirstName = person.FirstName;
+            personPersistentObject.SurName = person.SurName;
+            personPersistentObject.Dob = person.Dob;
+            personPersistentObject.Address = person.Address;
+            personPersistentObject.PhoneNumber = person.PhoneNumber;
+            personPersistentObject.IBAN = person.IBAN;
+
+            personWriteService.UpdatePerson(personPersistentObject);
         }
     }
 }

@@ -4,7 +4,7 @@ namespace PersonalCatalogView.Service
 {
     public interface IPersonWriteService
     {
-        void SavePerson(Person person);
-        void UpdatePerson(Person person);
+        void SavePerson(PersonPersistentObject person);
+        void UpdatePerson(PersonPersistentObject person);
     }
 }
